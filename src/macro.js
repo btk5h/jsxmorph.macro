@@ -36,7 +36,6 @@ function transformMorphCalls(ref) {
       imports.push(path.node);
     },
     ExportDefaultDeclaration(path) {
-      path.get("declaration.body").unshiftContainer("body", morphSpec.body);
       importedComponentPath = path.get("declaration");
       path.stop();
     },
@@ -44,6 +43,7 @@ function transformMorphCalls(ref) {
 
   mergeImports(ref, imports);
   applySpec(mergeSpec, importedComponentPath);
+  importedComponentPath.get("body").unshiftContainer("body", morphSpec.body);
 
   ref.parentPath.parentPath.replaceWith(
     t.exportDefaultDeclaration(importedComponentPath.node)

@@ -51,6 +51,9 @@ function buildMergeSpec(statements = []) {
 }
 
 function applySpec(mergeSpec, componentPath) {
+  const componentBody = componentPath.node.body.body
+  componentPath.node.body.body = [componentBody[componentBody.length - 1]]
+
   componentPath.traverse({
     JSXElement(path) {
       if (matchesSomeSelector(mergeSpec.nodesToDelete, path)) {

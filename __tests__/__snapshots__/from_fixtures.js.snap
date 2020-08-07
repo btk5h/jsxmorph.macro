@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`jsxmorph.macro existing_body__replace_body: existing_body__replace_body 1`] = `
+
+import morph from "../src/macro";
+
+export default morph("./__fixtures__/data/existing_body.tsx", () => {
+  const foo = "replaced";
+});
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import React from "react";
+export default function ComponentWithExistingBody() {
+  const foo = "replaced";
+  return <div id={foo} />;
+}
+
+
+`;
+
 exports[`jsxmorph.macro simple__add_attribute: simple__add_attribute 1`] = `
 
 import morph from "../src/macro";
