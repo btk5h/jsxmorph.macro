@@ -2,13 +2,13 @@
 
 exports[`jsxmorph.macro simple__add_attribute: simple__add_attribute 1`] = `
 
-import morph from "../src/macro"
+import morph from "../src/macro";
 
 export default morph("./__fixtures__/data/simple.tsx", () => {
   return ({ addAttribute }) => {
-    addAttribute("[name=first]", "foo", "bar")
-  }
-})
+    addAttribute("[name=first]", "foo", "bar");
+  };
+});
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
@@ -27,13 +27,13 @@ export default function SimpleComponent() {
 
 exports[`jsxmorph.macro simple__add_attribute_expression: simple__add_attribute_expression 1`] = `
 
-import morph from "../src/macro"
+import morph from "../src/macro";
 
 export default morph("./__fixtures__/data/simple.tsx", () => {
   return ({ addAttribute }) => {
-    addAttribute("[name=first]", "foo", 1)
-  }
-})
+    addAttribute("[name=first]", "foo", 1);
+  };
+});
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
@@ -52,14 +52,14 @@ export default function SimpleComponent() {
 
 exports[`jsxmorph.macro simple__conditional: simple__conditional 1`] = `
 
-import morph from "../src/macro"
+import morph from "../src/macro";
 
 export default morph("./__fixtures__/data/simple.tsx", () => {
-  const condition = true
+  const condition = true;
   return ({ conditionallyRender }) => {
-    conditionallyRender("[name=first]", condition)
-  }
-})
+    conditionallyRender("[name=first]", condition);
+  };
+});
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
@@ -79,13 +79,13 @@ export default function SimpleComponent() {
 
 exports[`jsxmorph.macro simple__delete_node: simple__delete_node 1`] = `
 
-import morph from "../src/macro"
+import morph from "../src/macro";
 
 export default morph("./__fixtures__/data/simple.tsx", () => {
   return ({ deleteNode }) => {
-    deleteNode("[name=second]")
-  }
-})
+    deleteNode("[name=second]");
+  };
+});
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
@@ -103,14 +103,14 @@ export default function SimpleComponent() {
 
 exports[`jsxmorph.macro simple__prerender_logic: simple__prerender_logic 1`] = `
 
-import { useEffect } from "react"
-import morph from "../src/macro"
+import { useEffect } from "react";
+import morph from "../src/macro";
 
 export default morph("./__fixtures__/data/simple.tsx", () => {
   useEffect(() => {
-    console.log("ext")
-  }, [])
-})
+    console.log("ext");
+  }, []);
+});
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
