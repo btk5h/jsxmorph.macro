@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`jsxmorph.macro simple__add_attribute: simple__add_attribute 1`] = `
+
+import morph from "../src/macro"
+
+export default morph("./__fixtures__/data/simple.tsx", () => {
+  return ({ addAttribute }) => {
+    addAttribute("[name=first]", "foo", "bar")
+  }
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import React from "react";
+export default function SimpleComponent() {
+  return (
+    <div>
+      <span name="first" foo="bar" />
+      <span name="second" />
+    </div>
+  );
+}
+
+
+`;
+
+exports[`jsxmorph.macro simple__add_attribute_expression: simple__add_attribute_expression 1`] = `
+
+import morph from "../src/macro"
+
+export default morph("./__fixtures__/data/simple.tsx", () => {
+  return ({ addAttribute }) => {
+    addAttribute("[name=first]", "foo", 1)
+  }
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import React from "react";
+export default function SimpleComponent() {
+  return (
+    <div>
+      <span name="first" foo={1} />
+      <span name="second" />
+    </div>
+  );
+}
+
+
+`;
+
+exports[`jsxmorph.macro simple__conditional: simple__conditional 1`] = `
+
+import morph from "../src/macro"
+
+export default morph("./__fixtures__/data/simple.tsx", () => {
+  const condition = true
+  return ({ conditionallyRender }) => {
+    conditionallyRender("[name=first]", condition)
+  }
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import React from "react";
+export default function SimpleComponent() {
+  const condition = true;
+  return (
+    <div>
+      {condition && <span name="first" />}
+      <span name="second" />
+    </div>
+  );
+}
+
+
+`;
+
+exports[`jsxmorph.macro simple__delete_node: simple__delete_node 1`] = `
+
+import morph from "../src/macro"
+
+export default morph("./__fixtures__/data/simple.tsx", () => {
+  return ({ deleteNode }) => {
+    deleteNode("[name=second]")
+  }
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import React from "react";
+export default function SimpleComponent() {
+  return (
+    <div>
+      <span name="first" />
+    </div>
+  );
+}
+
+
+`;
+
+exports[`jsxmorph.macro simple__prerender_logic: simple__prerender_logic 1`] = `
+
+import { useEffect } from "react"
+import morph from "../src/macro"
+
+export default morph("./__fixtures__/data/simple.tsx", () => {
+  useEffect(() => {
+    console.log("ext")
+  }, [])
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import React from "react";
+import { useEffect } from "react";
+export default function SimpleComponent() {
+  useEffect(() => {
+    console.log("ext");
+  }, []);
+  return (
+    <div>
+      <span name="first" />
+      <span name="second" />
+    </div>
+  );
+}
+
+
+`;

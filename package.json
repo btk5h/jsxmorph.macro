@@ -1,0 +1,38 @@
+{
+  "name": "jsxmorph.macro",
+  "version": "0.0.1",
+  "description": "A macro for applying transformations to React components",
+  "main": "src/macro.js",
+  "repository": "https://github.com/btk5h/jsxmorph.macro",
+  "author": "Bryan Terce <bryan.terce@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "fix:format": "prettier"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "@babel/generator": "^7.11.0",
+    "@babel/parser": "^7.11.0",
+    "@babel/plugin-transform-typescript": "^7.11.0",
+    "@babel/template": "^7.10.4",
+    "@babel/traverse": "^7.11.0",
+    "babel-plugin-macros": "^2.8.0",
+    "css-what": "^3.3.0",
+    "globby": "^11.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-syntax-jsx": "^7.10.4",
+    "@babel/types": "^7.11.0",
+    "babel-plugin-tester": "^9.2.0",
+    "husky": "^4.2.5",
+    "jest": "^26.2.2",
+    "prettier": "2.0.5",
+    "pretty-quick": "^2.0.1"
+  }
+}
